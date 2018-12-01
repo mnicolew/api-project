@@ -20,15 +20,31 @@
         background-repeat: no-repeat;
         /* background-size: 1000% 1000% !important; */
         /* overflow: scroll; */
+        width: 100%;
     }
     
     body {
+        
         height: 100%;
         background: linear-gradient(#e66465, #9198e5);
         margin: auto;
-        width: 85%;
+        width: 100%;
         justify-content: center;
         font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
+        
+    }
+
+    #main {
+        transition: margin-left .5s;
+    }
+    header {
+        position: sticky;
+        top: 2.5%;
+        width: 96%;
+        margin: auto;
+        background: transparent;
+        color: #f1f1f1;
+        padding-bottom: 5vw;
     }
 
     h2 {
@@ -49,12 +65,12 @@
         left: 0;
         background-color: whitesmoke;
         overflow-x: hidden;
-        transition: .8s;
-        padding-top: 60px;
+        transition: .5s;
+        padding-top: 100px;
     }
     
     nav a {
-        padding: 10px 10px 10px 32px;
+        padding: 20px 10px 10px 32px;
         text-decoration: none;
         font-size: 25px;
         color: black;
@@ -65,26 +81,36 @@
     
     /* Color of nav text upon hover */
     nav a:hover {
-        color: purple;
+        color: rgb(94, 55, 138);
     }
     
     .closebtn {
         position: absolute;
-        top: 0px;
+        top: 20px;
         right: 25px;
-        font-size: 36px;
+        font-size: 45px;
         margin-left: 0px;
+        cursor: pointer;
         
     }
     
     .openbtn {
-        font-size: 40px;
+        font-size: 50px;
         cursor: pointer;
     }
     
+    .section{
+        /* padding: 30% 0; */
+        padding-bottom: 15vw;
+        width: 78%;
+        margin: auto;
+
+    }
+
     .flexbox{
         display: flex;
         justify-content: space-evenly;
+        width: 100%;
     }
 
     .container {
@@ -96,7 +122,7 @@
         border-radius: 25px;
 
         height: 22vw;
-        width: 85%;
+        width: 90%;
 
     }
 
@@ -137,9 +163,10 @@
         z-index: -1;
     }
     /* viewing from a phone */
-    /* @media screen and (max-height: 450px) {
+    @media screen and (max-height: 450px) {
     nav {padding-top: 15px;}
-    nav a {font-size: 18px;} */
+    nav a {font-size: 18px;}
+    }
     </style>
 
     <!-- JAVA SCRIPT -->
@@ -147,11 +174,13 @@
         // Max width of 250px
         function openNav() {
             document.getElementById("nav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
         }
 
         // Close the side nav bar on click
         function closeNav() {
             document.getElementById("nav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
         }
 
         // Youtube video embed code borrowed from:
@@ -216,101 +245,106 @@
                 bool = true;
             }
             return bool;
-        }</script>
+        }
+    </script>
 </head>
 
 <body>
-    <!-- &#9776; is the unicode for the "triagram for heaven" and &times; is a X -->
-    <span class="openbtn" onclick="openNav()">&#9776;</span>
-    <nav id="nav">
-        <!-- Click nav bar link to jump to the section on the html -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9932;</a>
-        <a href="#welcome">Welcome</a>
-        <a href="#quote">Quote</a>
-        <a href="#yoga">Yoga</a>
-        <a href="#horoscope">Horoscope</a>
-        <a href="#contact">Contact</a>
+    <header>
+        <!-- &#9776; is the unicode for the "triagram for heaven" and &times; is a X -->
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <nav id="nav">
+            <!-- Click nav bar link to jump to the section on the html -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9932;</a>
+            <a href="#welcome">Welcome</a>
+            <a href="#hrefQuote">Quote</a>
+            <a href="#yoga">Yoga</a>
+            <a href="#horoscope">Horoscope</a>
+            <a href="#contact">Contact</a>
 
-        <!-- embedded youtube video/audio that i didnt know where to put -->
-        <a>
-            <div data-video="hHW1oY26kxQ" data-autoplay="0" data-loop="0" id="youtube-audio">
+            <!-- embedded youtube video/audio that i didnt know where to put -->
+            <a>
+                <div data-video="hHW1oY26kxQ" data-autoplay="0" data-loop="0" id="youtube-audio">
 
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <div id='main'>
+
+<!-- I haven't done anything with this yet -->
+        <div id="welcome">
+            <p></p>
+        </div>
+
+        <!-- <div class='section'> -->
+        <div id="hrefQuote" class="section">
+            <h2>Inspirational Quote of The Day</h2>
+            <div class='container'>
+                <div id="quote">
+
+                    <p>{% for v in quotedata %}
+                        {{v}}<br><br>
+                        {% endfor%}
+                    </p>
+
+                </div>
             </div>
-        </a>
-    </nav>
+        </div>
+        <div id="yoga" class='section'>
+            <!-- yoga pose images/names -->
+            <h2>Yoga Poses of The Day</h2>
+            <div class="flexbox">
+                {% for p,data in yogadata.items() %}
+                <div>
+                    <h3>Common name: {{data.e_name}}</h3>
+                    <h3>Sanskrit name: {{data.s_name}}</h3>
+                    <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
+                    <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="25" />
 
-    <div id="welcome">
-        <p></p>
-    </div>
-
-    <h2>Inspirational Quote of The Day</h2>
-    <div class='container'>
-        <div id="quote">
-
-            <p>{% for v in quotedata %}
-                {{v}}<br><br>
+                </div>
                 {% endfor%}
-            </p>
-
-        </div>
-    </div>
-    <div id="yoga">
-        <!-- yoga pose images/names -->
-        <h2>Yoga Poses of The Day</h2>
-        <div class="flexbox">
-            {% for p,data in yogadata.items() %}
-            <div>
-                <h3>Common name: {{data.e_name}}</h3>
-                <h3>Sanskrit name: {{data.s_name}}</h3>
-                <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
-                <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="20" />
-
             </div>
-            {% endfor%}
-
-
-
+        </div>
+        <div id="horoscope" class="section">
+            <h2>Horoscope</h2>
+            <!-- form to select month/date of birth validated by .js file -->
+            <!-- "/result" is the page that is created from the user input -->
+            <form name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
+                <label for="sunsign">When is your birthday? </label>
+                <select name="month" id="month" required>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <!-- 31 day selector function defined in .js file -->
+                <select name="day" id="day" required>
+                    <script type='text/javascript'>
+                        selectDay();
+                    </script>
+                </select>
+                <input id='submitForm' type="submit" value="Submit" />
+            </form>
+            <p></p>
         </div>
 
-        <p></p>
+        <footer>
+            <p>
+                &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
+                <br /> UW Seattle - HCDE 310 API Project Autumn 2018
+            </p>
+        </footer>
     </div>
-    <div id="horoscope">
-        <h2>Horoscope</h2>
-        <!-- form to select month/date of birth validated by .js file -->
-        <!-- "/result" is the page that is created from the user input -->
-        <form name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
-            <label for="sunsign">When is your birthday? </label>
-            <select name="month" id="month" required>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-            </select>
-            <!-- 31 day selector function defined in .js file -->
-            <select name="day" id="day" required>
-                <script type='text/javascript'>
-                    selectDay();
-                </script>
-            </select>
-            <input id='submitForm' type="submit" value="Submit" />
-        </form>
-        <p></p>
-    </div>
-
-    <footer>
-        <p>
-            &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
-            <br /> UW Seattle - HCDE 310 API Project Autumn 2018
-        </p>
-    </footer>
 </body>
 
 </html>

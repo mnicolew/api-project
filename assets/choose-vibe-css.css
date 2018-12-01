@@ -1,0 +1,66 @@
+/* @font-face {
+    src: url(../Fonts/Open\ Sans\ regular.ttf);
+    font-family: openSans; /*body
+} */
+
+/* how to import fonts */
+body {
+    margin: auto;
+    padding: auto;
+    background: linear-gradient(#f3cfea, #ebe3bb);
+    background-size: cover;
+    width: 85%;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
+    overflow: hidden;
+}
+
+.welcome {
+    margin: auto;
+    font-size: 3.2em;
+    text-align: center;
+    position: relative;
+    top: 14%;
+
+    /* stretch text */
+    -webkit-transform:scale(1.5,1.2); /* Safari and Chrome */
+    -moz-transform:scale(1.5,1.2); /* Firefox */
+    -ms-transform:scale(1.5,1.2); /* IE 9 */
+    -o-transform:scale(1.5,1.2); /* Opera */
+    transform:scale(1.5,1.2); /* W3C */
+}
+
+
+.choose {
+    text-align: center;
+    position: relative;
+    top: 20%;
+    margin: auto;
+    font-size: 2.8em;
+}
+
+.vibe{
+    position: relative;
+    top: 32%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    opacity: .2;
+}
+
+footer {
+    font-size: .8em;
+    position: fixed;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    opacity: .55;
+    background-color:none;
+    color: black;
+    text-align: center;
+    z-index: -1;
+}

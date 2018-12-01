@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>horoscope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <style>
+        /* ---- reset ---- */
+
+        body {
+            margin: 0;
+            background-color: transparent;
+            /* background-color: #17182f; */
+        }
+
+        canvas {
+            display: block;
+            /* vertical-align: bottom; */
+        }
+
+        h1{
+            font-size: 5em;
+            text-align: center;
+            position: fixed;
+            z-index: 2;
+        }
+
+
+        /* ---- particles.js container ---- */
+        /* modified to a 180 gradient from dark purple to magenta with a longer animation*/
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,black 0%, #1A0E3B 40%, #863B43 80%, #aa5c63 100%);
+            background-size: 1000% 1000% !important;
+            -webkit-animation: changeColors 120s ease infinite;
+            -moz-animation: changeColors 120s ease infinite;
+            -o-animation: changeColors 120s ease infinite;
+            animation: changeColors 120s ease infinite;
+            display: block;
+
+        }
+
+        @-webkit-keyframes changeColors {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    // original = 355
+                    "value": 300,
+                    "density": {
+                        "enable": true,
+                        "value_area": 789.1476416322727
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.48927153781200905,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.2,
+                        "opacity_min": 0,
+                        "sync": false
+                    }
+                },
+                // value = size of particle
+                "size": {
+                    "value": 2.3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                // speed = speed of movement
+                "move": {
+                    "enable": true,
+                    "speed": 0.2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 83.91608391608392,
+                        "size": 1,
+                        "duration": 3,
+                        "opacity": 1,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 150,
+                        "duration": 6
+                    },
+                    "push": {
+                        "particles_nb": 10
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <!-- <h1>HOROSCOPE &#9804;</h1> -->
+</body>
+
+</html>
+
+
+<!-- 
+    Aries (March 21- April 19)
+    Taurus (April 20 - May 20)
+    Gemini (May 21 - June 20)
+    Cancer (June 21 - July 22)
+    Leo (July 23 - August 22)
+    Virgo (August 23 - September 22)
+    Libra (September 23 - October 22)
+    Scorpio (October 23 - November 21)
+    Sagittarius (November 22 - December 21)
+    Capricorn (December 22 - January 19)
+    Aquarius (January 20 - February 18)
+    Pisces (February 19 - March 20)
+ -->

@@ -1,0 +1,71 @@
+html{
+    height: 100%;
+    background: linear-gradient(#e66465, #9198e5);
+    background-size: cover;
+}
+
+nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    transition: .8s;
+    padding-top: 60px;
+}
+
+nav a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.28s;
+    
+}
+
+/* Color of nav text upon hover */
+nav a:hover {
+    color: purple;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 0px;
+    
+}
+
+.openbtn {
+    font-size:40px;
+    cursor: pointer;
+    border-style: solid black;
+    border-radius: 25px;
+    
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: .65;
+    background-color:none;
+    color: black;
+    text-align: center;
+
+
+}
+/* viewing from a phone */
+/* @media screen and (max-height: 450px) {
+  nav {padding-top: 15px;}
+  nav a {font-size: 18px;} */

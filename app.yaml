@@ -1,9 +1,8 @@
 runtime: python27
 api_version: 1
-threadsafe: true
+threadsafe: yes
 
 handlers:
-
 - url: /assets
   static_dir: assets 
   

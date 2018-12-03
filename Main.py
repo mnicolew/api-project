@@ -51,23 +51,48 @@ def quoteREST():
     return quote
 
 # TESTING ==>
-print('testing getYoga...')
-print(getYoga())
-
-print('testing horoREST...')
-print(pretty(horoREST('aquarius')))
-
-print('testing quoteREST...')
-print(quoteREST())
+# print('testing getYoga...')
+# print(getYoga())
+#
+# print('testing horoREST...')
+# print(pretty(horoREST('aquarius')))
+#
+# print('testing quoteREST...')
+# print(quoteREST())
 
 maindict = {}
 maindict['yogadata'] = getYoga()
 maindict['quotedata'] = quoteREST()
 
+# sends to choose-vibe.html
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('home-template.html')
+        template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
         self.response.write(template.render(maindict))
+
+# sends to home-template.html with choosen vibe
+class VibeResponseHandler(webapp2.RequestHandler):
+    # vibe names:
+    # peachy
+    # bright_sky
+    # spring_green
+    # purple_rain
+    def post(self):
+        vibe_choice = self.request.get('vibe_choice')
+
+        if vibe_choice == 'peachy':
+            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            self.response.write(template.render(maindict))
+        elif vibe_choice == 'bright_sky':
+            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            self.response.write(template.render(maindict))
+        elif vibe_choice == 'spring_green':
+            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            self.response.write(template.render(maindict))
+        else:
+            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            self.response.write(template.render(maindict))
+
 
 application = webapp2.WSGIApplication([('/', MainHandler)], debug=True)
 

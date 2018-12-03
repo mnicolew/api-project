@@ -46,8 +46,8 @@ def quoteREST():
     # quote['quote'] = quotejson['contents']['quotes'][0]['quote']
     # quote['author'] = quotejson['contents']['quotes'][0].get('author','anonymous')
     quote =[]
-    quote.append(quotejson['contents']['quotes'][0]['quote'])
-    quote.append(quotejson['contents']['quotes'][0].get('author','anonymous'))
+    quote.append('"' + quotejson['contents']['quotes'][0]['quote'] + '"')
+    quote.append('-' + quotejson['contents']['quotes'][0].get('author','anonymous'))
     return quote
 
 # TESTING ==>

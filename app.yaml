@@ -12,10 +12,6 @@ handlers:
 
 - url: /
   script: Main.application
-<<<<<<< HEAD
-=======
-
->>>>>>> 785407ad353e6a6ac24bee20759fad5677225ec6
 - url: /vibehome
   script: Main.application
 

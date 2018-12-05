@@ -14,9 +14,7 @@ handlers:
 - url: .*
   script: Main.application
 
-# - url: /guava-strips\.js
-#   static_files: assets/guava-strips.js
-#   upload: assets/guava-strips\.js
+
 
 libraries:
 - name: webapp2

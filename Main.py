@@ -59,14 +59,15 @@ def quoteREST():
 #
 # print('testing quoteREST...')
 # print(quoteREST())
-
-maindict = {}
-maindict['yogadata'] = getYoga()
-maindict['quotedata'] = quoteREST()
+#
+# maindict = {}
+# maindict['yogadata'] = getYoga()
+# maindict['quotedata'] = quoteREST()
 
 # sends to choose-vibe.html
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        maindict = {}
         template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
         self.response.write(template.render(maindict))
 
@@ -77,8 +78,13 @@ class VibeResponseHandler(webapp2.RequestHandler):
     # bright_sky
     # spring_green
     # purple_rain
-    def post(self):
+
+    def get(self):
         vibe_choice = self.request.get('vibe_choice')
+
+        maindict = {}
+        maindict['yogadata'] = getYoga()
+        maindict['quotedata'] = quoteREST()
 
         if vibe_choice == 'peachy':
             template = JINJA_ENVIRONMENT.get_template('home-template.html')
@@ -93,8 +99,11 @@ class VibeResponseHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('home-template.html')
             self.response.write(template.render(maindict))
 
-
-application = webapp2.WSGIApplication([('/', MainHandler)], debug=True)
+application = webapp2.WSGIApplication([
+                                      ('/.*', MainHandler),
+                                      ('/vibehome', VibeResponseHandler)
+                                      ],
+                                      debug=True)
 
 # Determines the zodiac sign based on the user input 
 # from the horoscope birthday request

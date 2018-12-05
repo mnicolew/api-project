@@ -10,9 +10,10 @@ handlers:
   static_files: assets/\1
   upload: assets/(.*)
 
-- url: .*
+- url: /
   script: Main.application
-
+- url: /vibehome
+  script: Main.application
 # - url: /guava-strips\.js
 #   static_files: assets/guava-strips.js
 #   upload: assets/guava-strips\.js

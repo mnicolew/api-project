@@ -11,7 +11,10 @@ handlers:
   static_files: assets/\1
   upload: assets/(.*)
 
-- url: .*
+- url: /
+  script: Main.application
+
+- url: /vibehome
   script: Main.application
 
 

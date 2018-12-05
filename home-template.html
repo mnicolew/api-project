@@ -243,7 +243,7 @@
             // var o=function(e){var a=e?"IDzX9gL.png":"quyUPXN.png";
             // t.setAttribute("src","https://i.imgur.com/"+a)};
             var o = function (e) {
-                var a = e ? "../api-project/images/play.png" : "../api-project/images/pause.png";
+                var a = e ? "/assets/images/play.png" : "/assets/images/pause.png";
                 t.setAttribute("src", a)
             };
             e.onclick = function () {
@@ -318,8 +318,6 @@
         width: 40vw;
         height: 60px;
         font-family: 'Montserrat', 'sans-serif';
-        /* margin-top: 30px;
-        margin-bottom: 30px; */
         background-color: transparent;
         border-radius: 15px;
         padding: 60px 20px;
@@ -332,8 +330,8 @@
 
     .clock-col {
         text-align: center;
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-right: 48px;
+        margin-left: 26px;
         min-width: 60px;
         position: relative;
         opacity: .85;
@@ -401,7 +399,7 @@
         function updateTime() {
             document.documentElement.style.setProperty(
                 "--timer-day",
-                "'" + moment().format("dd") + "'"
+                "'" + moment().format("ddd") + "'"
             );
             document.documentElement.style.setProperty(
                 "--timer-hours",
@@ -452,6 +450,7 @@
         <div id="hello" class='animated fadeIn slow'>
             <h1>Hello</h1>
         </div>
+        <!-- clock -->
         <div class='animated slideInUp slow delay-1s'>
             <div id='time'>
                 <div class="clock-container">

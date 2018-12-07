@@ -4,9 +4,10 @@ threadsafe: true
 
 handlers:
 - url: /assets
-  static_dir: assets
+  static_dir: assets 
+  
 
-- url: /.*
+- url: .*
   script: Main.application
 
 libraries:

@@ -54,16 +54,16 @@ def quoteREST():
 # TESTING ==>
 # print('testing getYoga...')
 # print(getYoga())
-#
-# print('testing horoREST...')
-# print(pretty(horoREST('aquarius')))
-#
+
+print('testing horoREST...')
+print(pretty(horoREST('aquarius')))
+
 # print('testing quoteREST...')
 # print(quoteREST())
-#
-# maindict = {}
-# maindict['yogadata'] = getYoga()
-# maindict['quotedata'] = quoteREST()
+
+maindict = {}
+maindict['yogadata'] = getYoga()
+maindict['quotedata'] = quoteREST()
 
 # sends to choose-vibe.html
 class MainHandler(webapp2.RequestHandler):
@@ -71,6 +71,7 @@ class MainHandler(webapp2.RequestHandler):
         maindict = {}
         # template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
         template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
+
         self.response.write(template.render(maindict))
 
 # sends to home-template.html with choosen vibe
@@ -83,6 +84,8 @@ class VibeResponseHandler(webapp2.RequestHandler):
 
     def post(self):
         vibe_choice = self.request.get('vibe_choice')
+
+
 
         maindict = {}
         maindict['yogadata'] = getYoga()
@@ -101,41 +104,51 @@ class VibeResponseHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('home-template4.html')
             self.response.write(template.render(maindict))
 
-application = webapp2.WSGIApplication([
+application = webapp2.WSGIApplication([\
                                       ('/vibehome', VibeResponseHandler),
                                       ('/.*', MainHandler)
                                       ],
                                       debug=True)
 
+class horoResponseHandler(webapp2.RequestHandler):
+#     def get(self):
+#         DOB = int(self.request.get('DOB'))
+#         maindict = {}
+#         maindict['yogadata'] = getYoga()
+#         maindict['quotedata'] = quoteREST()
+#         sunsign = getZodiac(DOB)
+#
+
+
 # Determines the zodiac sign based on the user input 
 # from the horoscope birthday request
-def getZodiac(birthday):
-    zodiac = ""
-    if (birthday >= '3-21' and  birthday <= '4-19'):
-        zodiac='aries'
-    elif (birthday >= '4-20' and birthday <= '5-20'):
-        zodiac='taurus'
-    elif (birthday >= '5-21' and birthday <= '6-20'):
-        zodiac='gemini'
-    elif (birthday >= '6-21' and birthday <= '7-22'):
-        zodiac='cancer'
-    elif (birthday >= '7-23' and birthday <= '8-22'):
-        zodiac='leo'
-    elif (birthday >= '8-23' and birthday <= '9-22'):
-        zodiac='virgo'
-    elif (birthday >= '9-23' and birthday <= '10-22'):
-        zodiac='libra'
-    elif (birthday >= '10-23' and birthday <= '11-21'):
-        zodiac='scorpio'
-    elif (birthday >= '11-22' and birthday <= '12-21'):
-        zodiac='sagittarius'
-    elif (birthday >= '12-22' and birthday <= '1-19'):
-        zodiac='capricorn'
-    elif (birthday >= '1-20' and birthday <= '2-18'):
-        zodiac='aquarius'
-    else:
-        zodiac = 'pisces'
-    return zodiac
+    def getZodiac(birthday):
+        zodiac = ""
+        if (birthday >= '321' and  birthday <= '419'):
+            zodiac='aries'
+        elif (birthday >= '420' and birthday <= '520'):
+            zodiac='taurus'
+        elif (birthday >= '521' and birthday <= '620'):
+            zodiac='gemini'
+        elif (birthday >= '621' and birthday <= '722'):
+            zodiac='cancer'
+        elif (birthday >= '723' and birthday <= '822'):
+            zodiac='leo'
+        elif (birthday >= '823' and birthday <= '922'):
+            zodiac='virgo'
+        elif (birthday >= '923' and birthday <= '1022'):
+            zodiac='libra'
+        elif (birthday >= '1023' and birthday <= '1121'):
+            zodiac='scorpio'
+        elif (birthday >= '1122' and birthday <= '1221'):
+            zodiac='sagittarius'
+        elif (birthday >= '1222' and birthday <= '119'):
+            zodiac='capricorn'
+        elif (birthday >= '120' and birthday <= '218'):
+            zodiac='aquarius'
+        else:
+            zodiac = 'pisces'
+        return zodiac
 
 
 # <!-- 

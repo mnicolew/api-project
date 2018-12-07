@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<!-- bright sky -->
+<head>
+    <title>Cool Name</title>
+    <link type='image' href="../api-project/images/pause.png" />
+    <link type='image' href="../api-project/images/play.png" />
+    <link type='image' href="../api-project/images/default-button.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+    <!-- Import javascript files -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+    <!-- CSS -->
+    <style>
+        html {
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* background-size: 1000% 1000% !important; */
+        /* overflow: scroll; */
+        width: 100%;
+    }
+    
+    body {
+        
+        height: 100%;
+        background: linear-gradient(#ccfaf9, #9EDBE7);
+        /* background: linear-gradient(rgb(243, 192, 38), rgba(146, 233, 255, 0.884)); */
+        /* background: linear-gradient(#FEE8A6, #F7A08A); */
+
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+        /* font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif; */
+        font-family: 'Montserrat', 'sans-serif';
+
+    }
+
+    #main {
+        transition: margin-left .5s;
+    }
+    header {
+        position: sticky;
+        top: 2.5%;
+        width: 96%;
+        margin: auto;
+        background: transparent;
+        color: #f1f1f1;
+        z-index: 5;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 6vh;
+    }
+
+    #yoga h3 {
+        text-align: center;
+
+    }
+    
+    nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        transition: .5s;
+        padding-top: 100px;
+    }
+    
+    nav a {
+        padding: 20px 10px 10px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: black;
+        display: block;
+        transition: 0.28s;
+        
+    }
+    
+    /* Color of nav text upon hover */
+    nav a:hover {
+        color: rgb(94, 55, 138);
+    }
+    
+    .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 45px;
+        margin-left: 0px;
+        cursor: pointer;
+        
+    }
+    
+    .openbtn {
+        font-size: 60px;
+        cursor: pointer;
+        opacity: .85;
+    }
+
+    .youtube {
+        padding-top: 12px;
+        filter: invert(100%);
+        opacity: .85;
+        float: right;
+    }
+
+    #hello {
+        font-size: 8vw;
+        /* font-size: 8em; */
+        width: 100%;
+        text-align: center;
+        letter-spacing: 30px;
+        line-height: 0;
+        color: rgb(253, 228, 227);
+        opacity: .90;
+        padding-top: 12vh ;
+        padding-bottom: 2vh;
+        width: 78%;
+        margin: auto;
+    }
+    
+    #time {
+        padding-bottom: 16vw;
+        width: 78%;
+        margin: auto;
+    }
+    .section{
+        /* padding: 30% 0; */
+        padding-top: 14vh;
+        padding-bottom: 16vw;
+        width: 78%;
+        margin: auto;
+
+    }
+
+    .flexbox{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    /* quote container */
+    .container {
+        margin: auto;
+        /* background-color: gainsboro; */
+        border-color: white;
+        border-style: solid;
+        border-width: 3.5px;
+        border-radius: 25px;
+
+        height: 22vw;
+        width: 90%;
+
+    }
+
+    #quote {
+        height: 80%;
+        width: 90%;
+        margin: auto;
+        font-size: 2.5vw;
+        vertical-align: middle;
+
+    }
+
+    #quote p {
+        margin-top: 8%;
+        line-height: 1.3;
+    }
+
+    .poses {
+        /*change to percentage or vw */
+        /* height: 350px;
+        width: 350px; */
+        height: 20vw;
+        width: 20vw;
+        border-style: solid;
+        border-width: 3.5px;
+        border-radius: 35px;
+        border-color: white;
+        filter: drop-shadow(9px 5px 0.75rem rgb(90, 84, 92));
+    }
+
+    footer {
+        font-size: 1em;
+        position: static;
+        left: 0;
+        bottom: 15px;
+        width: 100%;
+        opacity: .55;
+        background-color: none;
+        color: black;
+        text-align: center;
+        z-index: -1;
+    }
+    /* viewing from a phone */
+    @media screen and (max-height: 450px) {
+    nav {padding-top: 15px;}
+    nav a {font-size: 18px;}
+    }
+    </style>
+
+    <!-- JAVA SCRIPT -->
+    <script>
+        // Open the side nav bar on click.
+        // Max width of 250px
+        function openNav() {
+            document.getElementById("nav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        // Close the side nav bar on click
+        function closeNav() {
+            document.getElementById("nav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        // Youtube video embed code borrowed from:
+        // https://sarmadgardezi.com/blog/youtube/how-to-embed-youtube-video-as-an-audio-player-in-website/1000/
+        // Note: code has been modified to fit our needs
+        function onYouTubeIframeAPIReady() {
+            var e = document.getElementById("youtube-audio"),
+                t = document.createElement("img"); t.setAttribute("id", "youtube-icon"),
+                    t.style.cssText = "cursor:pointer;cursor:hand",
+                    e.appendChild(t);
+
+            var a = document.createElement("div");
+            a.setAttribute("id", "youtube-player"),
+                e.appendChild(a);
+            // 1st png is a play icon, 2nd is a stop icon
+            // pictures hosted using imgur
+            // var o=function(e){var a=e?"IDzX9gL.png":"quyUPXN.png";
+            // t.setAttribute("src","https://i.imgur.com/"+a)};
+            var o = function (e) {
+                var a = e ? "/assets/images/play.png" : "/assets/images/pause.png";
+                t.setAttribute("src", a)
+            };
+            e.onclick = function () {
+                r.getPlayerState() === YT.PlayerState.PLAYING ||
+                    r.getPlayerState() === YT.PlayerState.BUFFERING ? (
+                        r.pauseVideo(), o(!1)) :
+                    (r.playVideo(), o(!0))
+            }; var r = new YT.Player("youtube-player",
+                {
+                    height: "0", width: "0", videoId: e.dataset.video, playerVars:
+                        { autoplay: e.dataset.autoplay, loop: e.dataset.loop }, events:
+                    {
+                        onReady: function (e) {
+                            r.setPlaybackQuality("small"),
+                                o(r.getPlayerState() !== YT.PlayerState.CUED)
+                        },
+                        onStateChange: function (e) { e.data === YT.PlayerState.ENDED && o(!1) }
+                    }
+                })
+        }
+
+        // jQuery: select form from 1 to 31 days of the month
+        function selectDay() {
+            var select = '';
+            for (num = 1; num <= 31; num++) {
+                select += '<option val=' + num + '>' + num + '</option>';
+            }
+            $('#day').html(select);
+        }
+
+        // validate birthday for horoscope
+        function validateForm(form) {
+            var month = form['month'].value;
+            var day = form['day'].value;
+            var days30 = [4, 6, 9, 11];
+            var bool = false;
+            if (month == 2 && day > 29) {
+                alert("Oops! The date you entered is invalid, please try again.")
+            } else if (!days30.includes(month) && day > 30) {
+                alert("Oops! The month you entered only has 30 days, please try again.")
+            } else {
+                bool = true;
+            }
+            return bool;
+        }
+    </script>
+
+    <!-- CLOCK CSS modified from https://codepen.io/eehayman/pen/jVPKpN-->
+    <style>
+        .clock-day:before {
+        content: var(--timer-day);
+    }
+
+    .clock-hours:before {
+        content: var(--timer-hours);
+    }
+
+    .clock-minutes:before {
+        content: var(--timer-minutes);
+    }
+
+    .clock-seconds:before {
+        content: var(--timer-seconds);
+    }
+
+    /* .time {
+        top: 10%;
+    }  */
+
+    .clock-container {
+        margin: auto;
+        width: 40vw;
+        height: 60px;
+        font-family: 'Montserrat', 'sans-serif';
+        background-color: transparent;
+        border-radius: 15px;
+        padding: 60px 20px;
+        /* box-shadow: 1px 1px 5px rgba(189, 187, 187, 0.15), 0 1px 10px 2px rgba(0, 0, 0, 0.25); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .clock-col {
+        text-align: center;
+        margin-right: 48px;
+        margin-left: 26px;
+        min-width: 60px;
+        position: relative;
+        opacity: .85;
+    }
+
+    .clock-col:not(:last-child):before,
+    .clock-col:not(:last-child):after {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.329);
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        right: -42px;
+    }
+
+    .clock-col:not(:last-child):before {
+        top: 35%;
+    }
+
+    .clock-col:not(:last-child):after {
+        top: 48%;
+    }
+
+    .clock-timer:before {
+        color: #fff;
+        /* font-size: 4.2rem; */
+        font-size: 4.5vw;
+        text-transform: uppercase;
+    }
+
+    .clock-label {
+        color: rgba(255, 255, 255, 0.651);
+        text-transform: uppercase;
+        /* font-size: .7rem; */
+        font-size: 1vw;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 825px) {
+        .clock-container {
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .clock-col+.clock-col {
+            margin-top: 20px;
+        }
+
+        .clock-col:before,
+        .clock-col:after {
+            display: none !important;
+        }
+    }
+</style>
+
+    <!-- CLOCK JAVASCRIPT modified from https://codepen.io/eehayman/pen/jVPKpN-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>
+            requestAnimationFrame(updateTime)
+        );
+
+        function updateTime() {
+            document.documentElement.style.setProperty(
+                "--timer-day",
+                "'" + moment().format("ddd") + "'"
+            );
+            document.documentElement.style.setProperty(
+                "--timer-hours",
+                "'" + moment().format("k") + "'"
+            );
+            document.documentElement.style.setProperty(
+                "--timer-minutes",
+                "'" + moment().format("mm") + "'"
+            );
+            // document.documentElement.style.setProperty(
+            //     "--timer-seconds",
+            //     "'" + moment().format("ss") + "'"
+            // );
+            requestAnimationFrame(updateTime);
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <!-- &#9776; is the unicode for the "triagram for heaven" and &times; is a X -->
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <div class='youtube'>
+            <a>
+                <div data-video="hHW1oY26kxQ" data-autoplay="0" data-loop="0" id="youtube-audio"></div>
+            </a>
+        </div>
+
+        <nav id="nav">
+            <!-- Click nav bar link to jump to the section on the html -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9932;</a>
+            <a href="#hello">Hello</a>
+            <a href="#hrefQuote">Quote</a>
+            <a href="#yoga">Yoga</a>
+            <a href="#horoscope">Horoscope</a>
+            <a href="#contact">Contact</a>
+
+            <!-- embedded youtube video/audio that i didnt know where to put -->
+            <a>
+                <div data-video="hHW1oY26kxQ" data-autoplay="0" data-loop="0" id="youtube-audio"></div>
+            </a>
+        </nav>
+    </header>
+
+    <div id='main'>
+
+        <div id="hello" class='animated fadeIn slow'>
+            <h1>Hello</h1>
+        </div>
+        <!-- clock -->
+        <div class='animated slideInUp slow delay-1s'>
+            <div id='time'>
+                <div class="clock-container">
+                    <div class="clock-col">
+                        <p class="clock-day clock-timer">
+                        </p>
+                        <p class="clock-label">
+                            Day
+                        </p>
+                    </div>
+                    <div class="clock-col">
+                        <p class="clock-hours clock-timer">
+                        </p>
+                        <p class="clock-label">
+                            Hours
+                        </p>
+                    </div>
+                    <div class="clock-col">
+                        <p class="clock-minutes clock-timer">
+                        </p>
+                        <p class="clock-label">
+                            Minutes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hrefQuote" class="section">
+            <h2>Inspirational Quote of The Day</h2>
+            <div class='container'>
+                <div id="quote">
+
+                    <p>{% for v in quotedata %}
+                        {{v}}<br><br>
+                        {% endfor%}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="yoga" class='section'>
+            <!-- yoga pose images/names -->
+            <h2>Yoga Poses of The Day</h2>
+            <div class="flexbox">
+                {% for p,data in yogadata.items() %}
+                <div>
+
+                    <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
+                    <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="28" />
+                    <h3>Sanskrit: {{data.s_name}}</h3>
+                    <h3>English: {{data.e_name}}</h3>
+
+
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+
+        <div id="horoscope" class="section">
+            <h2>Horoscope</h2>
+            <!-- form to select month/date of birth validated by .js file -->
+            <!-- "/result" is the page that is created from the user input -->
+            <form id='DOB' name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
+                <label for="sunsign">When is your birthday? </label>
+                <select name="month" id="month" required>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <!-- 31 day selector function defined in .js file -->
+                <select name="day" id="day" required>
+                    <script type='text/javascript'>
+                        selectDay();
+                    </script>
+                </select>
+                <input id='submitForm' type="submit" value="Submit" />
+            </form>
+            <p></p>
+        </div>
+
+        <footer>
+            <p>
+                &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
+                <br /> UW Seattle - HCDE 310 API Project Autumn 2018
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for p,data in yogadata.items() %}
+        <p>{{data.e_name}}</p>
+        <p>{{data.s_name}}</p>
+        <img src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/>
+    {% endfor%}
+
+    {% for v in quotedata %}
+        <p>{{v}}</p>
+    {% endfor%}
+</body>
+</html> -->

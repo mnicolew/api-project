@@ -90,16 +90,16 @@ class VibeResponseHandler(webapp2.RequestHandler):
         maindict['quotedata'] = quoteREST()
 
         if vibe_choice == 'peachy':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template1.html')
             self.response.write(template.render(maindict))
         elif vibe_choice == 'bright_sky':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template2.html')
             self.response.write(template.render(maindict))
         elif vibe_choice == 'spring_green':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template3.html')
             self.response.write(template.render(maindict))
         else:
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template4.html')
             self.response.write(template.render(maindict))
 
 application = webapp2.WSGIApplication([\

@@ -515,7 +515,7 @@
             <h2>Horoscope</h2>
             <!-- form to select month/date of birth validated by .js file -->
             <!-- "/result" is the page that is created from the user input -->
-            <form name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
+            <form id='DOB' name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
                 <label for="sunsign">When is your birthday? </label>
                 <select name="month" id="month" required>
                     <option value="1">January</option>

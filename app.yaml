@@ -6,13 +6,8 @@ handlers:
 - url: /assets
   static_dir: assets 
   
-- url: /(.+)
-  static_files: assets/\1
-  upload: assets/(.*)
 
-- url: /
-  script: Main.application
-- url: /vibehome
+- url: .*
   script: Main.application
 
 libraries:

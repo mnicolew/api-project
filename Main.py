@@ -1,5 +1,6 @@
 import json, os, jinja2, random, urllib2, webapp2
 
+# https://hcde-310-final-project-223101.appspot.com/
 
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -68,6 +69,7 @@ def quoteREST():
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         maindict = {}
+        # template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
         template = JINJA_ENVIRONMENT.get_template('choose-vibe.html')
         self.response.write(template.render(maindict))
 
@@ -79,7 +81,7 @@ class VibeResponseHandler(webapp2.RequestHandler):
     # spring_green
     # purple_rain
 
-    def get(self):
+    def post(self):
         vibe_choice = self.request.get('vibe_choice')
 
         maindict = {}
@@ -87,21 +89,21 @@ class VibeResponseHandler(webapp2.RequestHandler):
         maindict['quotedata'] = quoteREST()
 
         if vibe_choice == 'peachy':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template1.html')
             self.response.write(template.render(maindict))
         elif vibe_choice == 'bright_sky':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template2.html')
             self.response.write(template.render(maindict))
         elif vibe_choice == 'spring_green':
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template3.html')
             self.response.write(template.render(maindict))
         else:
-            template = JINJA_ENVIRONMENT.get_template('home-template.html')
+            template = JINJA_ENVIRONMENT.get_template('home-template4.html')
             self.response.write(template.render(maindict))
 
 application = webapp2.WSGIApplication([
-                                      ('/.*', MainHandler),
-                                      ('/vibehome', VibeResponseHandler)
+                                      ('/vibehome', VibeResponseHandler),
+                                      ('/.*', MainHandler)
                                       ],
                                       debug=True)
 

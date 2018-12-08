@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <title>horoscope</title>
+    <title>Today's horoscope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
     <style>
         /* ---- reset ---- */
 
@@ -11,36 +13,69 @@
             margin: 0;
             background-color: transparent;
             /* background-color: #17182f; */
+            font-family: 'Montserrat', 'sans-serif';
+            width: 100%;
+            height: 100%;
         }
 
         canvas {
             display: block;
-            /* vertical-align: bottom; */
+            vertical-align: bottom;
         }
 
-        h1{
-            font-size: 5em;
+        h1 {
+            margin: auto;
             text-align: center;
-            position: fixed;
-            z-index: 2;
-        }
-        
-        p {
-            font-size: 3em;
-            color: wheat;
-            z-index: 6;
+            color: white;
+            font-size: 4vw;
+            opacity: .9;
+
         }
 
-        img {
-            
+        .horoscope {
+            /* padding-top: 5%; */
+            /* position: absolute; */
+            /* top: 5%;
+            left: 20%; */
+            position: absolute;
+            top: 8%;
+            transform: translateX(33.333%);
+            /* transform: translateY(-50%); */
+            height: 80%;
+            width: 60%;
+            font-family: 'Montserrat', 'sans-serif';
+            z-index: 5;
+
         }
+
+        .horoscope img {
+            width: 18vw;
+            height: 18vw;
+            display: block;
+            margin: auto;
+            padding: 15px;
+
+        }
+
+        .text {
+
+            color: white;
+            opacity: .9;
+            font-size: 1.1vw;
+            line-height: 3vw;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+
         /* ---- particles.js container ---- */
         /* modified to a 180 gradient from dark purple to magenta with a longer animation*/
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg,black 0%, #1A0E3B 40%, #863B43 80%, #aa5c63 100%);
+            background: linear-gradient(180deg, black 0%, #1A0E3B 40%, #863B43 80%, #aa5c63 100%);
             background-size: 1000% 1000% !important;
             -webkit-animation: changeColors 120s ease infinite;
             -moz-animation: changeColors 120s ease infinite;
@@ -71,11 +106,12 @@
 <body>
     <div id="particles-js"></div>
     <div class='horoscope'>
+        <h1>Daily Horoscope: {{sign}}</h1>
         <img src="../assets/images/{{sign}}.svg">
+        <div class='text'>
+            <p>{{horoscope}}</p>
+        </div>
     </div>
-    
-    <p>{{sign}}</p>
-    <p>{{horoscope}}</p>
 
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

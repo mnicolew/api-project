@@ -54,29 +54,29 @@ def quoteREST():
 def getZodiac(birthday):
     zodiac = ""
     if (birthday >= 321 and  birthday <= 419):
-        zodiac='aries'
+        zodiac='Aries'
     elif (birthday >= 420 and birthday <= 520):
-        zodiac='taurus'
+        zodiac='Taurus'
     elif (birthday >= 521 and birthday <= 620):
-        zodiac='gemini'
+        zodiac='Gemini'
     elif (birthday >= 621 and birthday <= 722):
-        zodiac='cancer'
+        zodiac='Cancer'
     elif (birthday >= 723 and birthday <= 822):
-        zodiac='leo'
+        zodiac='Leo'
     elif (birthday >= 823 and birthday <= 922):
-        zodiac='virgo'
+        zodiac='Virgo'
     elif (birthday >= 923 and birthday <= 1022):
-        zodiac='libra'
+        zodiac='Libra'
     elif (birthday >= 1023 and birthday <= 1121):
-        zodiac='scorpio'
+        zodiac= 'Scorpio'
     elif (birthday >= 1122 and birthday <= 1221):
-        zodiac='sagittarius'
+        zodiac='Sagittarius'
     elif (birthday >= 1222 and birthday <= 119):
-        zodiac='capricorn'
+        zodiac='Capricorn'
     elif (birthday >= 120 and birthday <= 218):
-        zodiac='aquarius'
+        zodiac='Aquarius'
     else:
-        zodiac = 'pisces'
+        zodiac = 'Pisces'
     return zodiac
 
 # TESTING ==>

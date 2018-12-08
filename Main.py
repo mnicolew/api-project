@@ -51,19 +51,48 @@ def quoteREST():
     quote.append('-' + quotejson['contents']['quotes'][0].get('author','anonymous'))
     return quote
 
+def getZodiac(birthday):
+    zodiac = ""
+    if (birthday >= 321 and  birthday <= 419):
+        zodiac='aries'
+    elif (birthday >= 420 and birthday <= 520):
+        zodiac='taurus'
+    elif (birthday >= 521 and birthday <= 620):
+        zodiac='gemini'
+    elif (birthday >= 621 and birthday <= 722):
+        zodiac='cancer'
+    elif (birthday >= 723 and birthday <= 822):
+        zodiac='leo'
+    elif (birthday >= 823 and birthday <= 922):
+        zodiac='virgo'
+    elif (birthday >= 923 and birthday <= 1022):
+        zodiac='libra'
+    elif (birthday >= 1023 and birthday <= 1121):
+        zodiac='scorpio'
+    elif (birthday >= 1122 and birthday <= 1221):
+        zodiac='sagittarius'
+    elif (birthday >= 1222 and birthday <= 119):
+        zodiac='capricorn'
+    elif (birthday >= 120 and birthday <= 218):
+        zodiac='aquarius'
+    else:
+        zodiac = 'pisces'
+    return zodiac
+
 # TESTING ==>
 # print('testing getYoga...')
 # print(getYoga())
 
 print('testing horoREST...')
-print(pretty(horoREST('aquarius')))
+print(pretty(horoREST('libra')))
+print(getZodiac(1012))
 
 # print('testing quoteREST...')
 # print(quoteREST())
 
-maindict = {}
-maindict['yogadata'] = getYoga()
-maindict['quotedata'] = quoteREST()
+# maindict = {}
+# maindict['yogadata'] = getYoga()
+# maindict['quotedata'] = quoteREST()
 
 # sends to choose-vibe.html
 class MainHandler(webapp2.RequestHandler):
@@ -104,64 +133,51 @@ class VibeResponseHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('home-template4.html')
             self.response.write(template.render(maindict))
 
+
+class horoResponseHandler(webapp2.RequestHandler):
+    def get(self):
+        maindict={}
+        month = self.request.get('month')
+        day =  self.request.get('day')
+        if len(day) == 1:
+            day = '0' + day
+        sign = getZodiac(int(month + day))
+        maindict['sign']=sign
+        result= horoREST(sign)
+        maindict['horoscope']=result['horoscope']
+
+        template = JINJA_ENVIRONMENT.get_template('horoscope.html')
+        self.response.write(template.render(maindict))
+
+        # sunsign = getZodiac(DOB)
+
+
+    # signs = {'aries': '../api-project/images/aries.svg','taurus':'/..api-project/images/taurus.svg','gemini':'/..api-project/images/gemini.svg','cancer':'/..api-project/images/cancer.svg',
+            #  'leo':'/..api-project/images/leo.svg','virgo':'/..api-project/images/virgo.svg','libra':'/..api-project/images/libra.svg','scorpio':'/..api-project/images/scorpio.svg',
+            #  'sagittarius':'/..api-project/images/sagittarius.svg','capricorn':'/..api-project/images/capricorn.svg','aquarius':'/..api-project/images/aquarius.svg','pisces': '/..api-project/images/pisces.svg'}
+    # print(signs)
+
+    # Determines the zodiac sign based on the user input 
+    # from the horoscope birthday request
+
+
 application = webapp2.WSGIApplication([\
                                       ('/vibehome', VibeResponseHandler),
-                                      ('/.*', MainHandler)
+                                      ('/result', horoResponseHandler),
+                                      ('/.*', MainHandler),
                                       ],
                                       debug=True)
 
-class horoResponseHandler(webapp2.RequestHandler):
-#     def get(self):
-#         DOB = int(self.request.get('DOB'))
-#         maindict = {}
-#         maindict['yogadata'] = getYoga()
-#         maindict['quotedata'] = quoteREST()
-#         sunsign = getZodiac(DOB)
-#
-
-
-# Determines the zodiac sign based on the user input 
-# from the horoscope birthday request
-    def getZodiac(birthday):
-        zodiac = ""
-        if (birthday >= '321' and  birthday <= '419'):
-            zodiac='aries'
-        elif (birthday >= '420' and birthday <= '520'):
-            zodiac='taurus'
-        elif (birthday >= '521' and birthday <= '620'):
-            zodiac='gemini'
-        elif (birthday >= '621' and birthday <= '722'):
-            zodiac='cancer'
-        elif (birthday >= '723' and birthday <= '822'):
-            zodiac='leo'
-        elif (birthday >= '823' and birthday <= '922'):
-            zodiac='virgo'
-        elif (birthday >= '923' and birthday <= '1022'):
-            zodiac='libra'
-        elif (birthday >= '1023' and birthday <= '1121'):
-            zodiac='scorpio'
-        elif (birthday >= '1122' and birthday <= '1221'):
-            zodiac='sagittarius'
-        elif (birthday >= '1222' and birthday <= '119'):
-            zodiac='capricorn'
-        elif (birthday >= '120' and birthday <= '218'):
-            zodiac='aquarius'
-        else:
-            zodiac = 'pisces'
-        return zodiac
-
-
-# <!-- 
-#     Aries (March 21- April 19)
-#     Taurus (April 20 - May 20)
-#     Gemini (May 21 - June 20)
-#     Cancer (June 21 - July 22)
-#     Leo (July 23 - August 22)
-#     Virgo (August 23 - September 22)
-#     Libra (September 23 - October 22)
-#     Scorpio (October 23 - November 21)
-#     Sagittarius (November 22 - December 21)
-#     Capricorn (December 22 - January 19)
-#     Aquarius (January 20 - February 18)
-#     Pisces (February 19 - March 20)
-#  -->
+        # <!-- 
+        #     Aries (March 21- April 19)
+        #     Taurus (April 20 - May 20)
+        #     Gemini (May 21 - June 20)
+        #     Cancer (June 21 - July 22)
+        #     Leo (July 23 - August 22)
+        #     Virgo (August 23 - September 22)
+        #     Libra (September 23 - October 22)
+        #     Scorpio (October 23 - November 21)
+        #     Sagittarius (November 22 - December 21)
+        #     Capricorn (December 22 - January 19)
+        #     Aquarius (January 20 - February 18)
+        #     Pisces (February 19 - March 20)

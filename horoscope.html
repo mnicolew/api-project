@@ -24,7 +24,12 @@
             position: fixed;
             z-index: 2;
         }
-
+        
+        p {
+            font-size: 3em;
+            color: wheat;
+            z-index: 6;
+        }
 
         /* ---- particles.js container ---- */
         /* modified to a 180 gradient from dark purple to magenta with a longer animation*/
@@ -39,6 +44,7 @@
             -o-animation: changeColors 120s ease infinite;
             animation: changeColors 120s ease infinite;
             display: block;
+            z-index: -2;
 
         }
 
@@ -61,6 +67,12 @@
 
 <body>
     <div id="particles-js"></div>
+    <div class='horoscope'>
+        <img src="../assets/images/{{sign}}.svg">
+    </div>
+    
+    <p>{{sign}}</p>
+    <p>{{horoscope}}</p>
 
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

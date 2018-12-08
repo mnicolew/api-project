@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="google-appengine-python" name="Google App Engine (Python)">
       <configuration>
-        <option name="rootFolder" value="C:\Users\miran\OneDrive\UW\AU18\310\api-project" />
+        <option name="rootFolder" value="C:\Users\Miranda\OneDrive\UW\AU18\310\api-project" />
         <option name="sdkFolder" value="C:\Users\miran\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin" />
         <option name="templatesFolder" value="" />
         <option name="oauth2" value="false" />

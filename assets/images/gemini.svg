@@ -1,1 +1,63 @@
-<?xml version="1.0" ?><svg data-name="Layer 1" id="Layer_1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title/><path d="M29,84.52a6,6,0,0,0,8.49,0,20.66,20.66,0,0,1,29.22,0A6,6,0,0,0,75.23,76a32.77,32.77,0,0,0-7.79-5.77,6,6,0,0,0,0-.71v-37a32.55,32.55,0,0,0,7.74-5.73,6,6,0,0,0-8.49-8.49,20.69,20.69,0,0,1-29.22,0A6,6,0,0,0,29,26.79a32.55,32.55,0,0,0,7.74,5.73v37a6,6,0,0,0,0,.71A32.78,32.78,0,0,0,29,76,6,6,0,0,0,29,84.52ZM48.77,36.16a32.08,32.08,0,0,0,6.71,0V66.64a32.87,32.87,0,0,0-6.71,0Z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   data-name="Layer 1"
+   id="Layer_1"
+   viewBox="0 0 100 100"
+   version="1.1"
+   sodipodi:docname="gemini.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata6959">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6957" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="694"
+     inkscape:window-height="480"
+     id="namedview6955"
+     showgrid="false"
+     inkscape:pagecheckerboard="true"
+     inkscape:zoom="2.36"
+     inkscape:cx="50"
+     inkscape:cy="50"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
+  <g
+     transform="matrix(4.0837252,0,0,4.0837252,-13.229723,-13.926497)"
+     id="stop"
+     style="opacity:0.98000004;stroke-width:0.24487445">
+    <g
+       id="g4503"
+       style="stroke-width:0.24487445" />
+  </g>
+  <path
+     id="path6952"
+     style="fill:#ffffff"
+     d="m 29,84.52 a 6,6 0 0 0 8.49,0 20.66,20.66 0 0 1 29.22,0 6.0245498,6.0245498 0 0 0 8.52,-8.52 32.77,32.77 0 0 0 -7.79,-5.77 6,6 0 0 0 0,-0.71 v -37 a 32.55,32.55 0 0 0 7.74,-5.73 6.0033366,6.0033366 0 0 0 -8.49,-8.49 20.69,20.69 0 0 1 -29.22,0 6,6 0 0 0 -8.47,8.49 32.55,32.55 0 0 0 7.74,5.73 v 37 a 6,6 0 0 0 0,0.71 A 32.78,32.78 0 0 0 29,76 6,6 0 0 0 29,84.52 Z M 48.77,36.16 a 32.08,32.08 0 0 0 6.71,0 v 30.48 a 32.87,32.87 0 0 0 -6.71,0 z m 48.260857,68.34153 H 7.188903 c -4.5043489,0 -8.1674504,-3.6631 -8.1674504,-8.167446 V 6.4921294 c 0,-4.5043489 3.6631015,-8.1674504 8.1674504,-8.1674504 h 89.841954 c 4.504353,0 8.167453,3.6631015 8.167453,8.1674504 V 96.334084 c 0,4.504346 -3.6631,8.167446 -8.167453,8.167446 z m 0,-8.167446 v 4.083726 z M 7.188903,6.4921294 V 96.334084 H 97.018606 L 97.030857,6.4921294 Z M 101.11458,96.334084 c 0,2.246049 -1.837674,4.083726 -4.083723,4.083726 H 7.188903 c -2.2460489,0 -4.0837252,-1.837677 -4.0837252,-4.083726 V 6.4921294 c 0,-2.2460489 1.8376763,-4.0837252 4.0837252,-4.0837252 h 89.841954 c 2.246049,0 4.083723,1.8376763 4.083723,4.0837252 z" />
+</svg>

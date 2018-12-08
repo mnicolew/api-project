@@ -25,11 +25,11 @@
 
         h1 {
             margin: auto;
+            padding-bottom: 5%;
             text-align: center;
             color: white;
             font-size: 4vw;
             opacity: .9;
-
         }
 
         .horoscope {
@@ -38,7 +38,7 @@
             /* top: 5%;
             left: 20%; */
             position: absolute;
-            top: 8%;
+            top: 9%;
             transform: translateX(33.333%);
             /* transform: translateY(-50%); */
             height: 80%;
@@ -48,30 +48,48 @@
 
         }
 
-<<<<<<< HEAD
         .horoscope img {
-            width: 18vw;
-            height: 18vw;
+            position: relative;
+            width: 13vw;
+            height: 13vw;
             display: block;
             margin: auto;
-            padding: 15px;
-=======
-        img {
->>>>>>> 9d737354520d8c2c23c0144ed5d3db3eee71de71
+            padding-top: 2%;
+            opacity: .85;
 
         }
 
         .text {
-
+            position: relative;
             color: white;
             opacity: .9;
             font-size: 1.1vw;
             line-height: 3vw;
             margin: auto;
-            padding: 20px;
-
+            padding-top: 50px;
         }
 
+        .home {
+            margin: auto;
+            width: 2vw;
+            height: 2vw;
+            filter: invert(100%);
+            opacity: .85;
+            padding: 2%;
+        }
+
+        footer {
+        font-size: .6vw;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        width: 100%;
+        opacity: .55;
+        background-color: none;
+        color: white;
+        text-align: center;
+        z-index: 5;
+    }
 
         /* ---- particles.js container ---- */
         /* modified to a 180 gradient from dark purple to magenta with a longer animation*/
@@ -116,6 +134,8 @@
             <p>{{horoscope}}</p>
         </div>
     </div>
+
+    <input class='home' type="image" src='../assets/images/home.svg' value="Home Page" onclick="history.back(-1)" />
 
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -235,6 +255,12 @@
         });
     </script>
     <!-- <h1>HOROSCOPE &#9804;</h1> -->
+    <footer>
+        <p>
+            &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
+            <br /> UW Seattle - HCDE 310 API Project Autumn 2018
+        </p>
+    </footer>
 </body>
 
 </html>

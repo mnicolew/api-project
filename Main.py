@@ -22,7 +22,7 @@ def safeGet(url):
 
 def getYoga():
     #choose a random yoga pose and store it's names and image
-    choose = random.sample(range(0, 34), 3)
+    choose = random.sample(range(0, 36), 3)
     yoga = json.load(open('yogaJSON.txt', 'r'))
     posedata = {}
     for p in choose:

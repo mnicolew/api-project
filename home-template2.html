@@ -29,14 +29,12 @@
     body {
         
         height: 100%;
-        background: linear-gradient(#9eBbe7, #bfe2e8);
+        background: linear-gradient(#9dbff7f3, #c2e9fb);
         /* background: linear-gradient(rgb(243, 192, 38), rgba(146, 233, 255, 0.884)); */
         /* background: linear-gradient(#FEE8A6, #F7A08A); */
-
         margin: auto;
         width: 100%;
         justify-content: center;
-        /* font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif; */
         font-family: 'Montserrat', 'sans-serif';
 
     }
@@ -79,9 +77,9 @@
     }
     
     nav a {
-        padding: 20px 10px 10px 32px;
+        padding: 20px 10px 10px 42px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 1.62vw;
         color: black;
         display: block;
         transition: 0.28s;
@@ -97,7 +95,7 @@
         position: absolute;
         top: 20px;
         right: 25px;
-        font-size: 45px;
+        font-size: 50px;
         margin-left: 0px;
         cursor: pointer;
         
@@ -213,8 +211,10 @@
         // Open the side nav bar on click.
         // Max width of 250px
         function openNav() {
-            document.getElementById("nav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+        //     document.getElementById("nav").style.width = "250px";
+        //     document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("nav").style.width = "14%";
+        document.getElementById("main").style.marginLeft = "14%";
         }
 
         // Close the side nav bar on click
@@ -567,4 +567,4 @@
         <p>{{v}}</p>
     {% endfor%}
 </body>
-</html> -->
+</html>

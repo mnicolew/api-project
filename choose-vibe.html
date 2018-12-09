@@ -5,66 +5,92 @@
     <meta charset="utf-8" />
     <title>Welcome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../api-project/assets/choose-vibe-css.css" /> -->
-    <!-- <script src="choose-vibe-css.js"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
 
     <!-- CHOOSE-VIBE CSS -->
     <style>
-        /* @font-face {
-            src: url(../Fonts/Open\ Sans\ regular.ttf);
-            font-family: openSans; /*body
-        } */
-
-        /* how to import fonts */
         body {
             margin: auto;
-            padding: auto;
-            background-image: url("assets/images/home.jpeg");
-            /* background: linear-gradient(#f3cfea, #ebe3bb); */
+            /* background-image: url("assets/images/home.jpeg");
             background-size: cover;
+            background-position: center; */
             width: 85%;
             justify-content: center;
-            font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
+            font-family: 'Montserrat', 'sans-serif';
             overflow: hidden;
         }
 
         .welcome {
             margin: auto;
-            font-size: 3.2em;
+            font-size: 3.8vw;
             text-align: center;
             position: relative;
-            top: 14%;
-
-            /* stretch text */
-            -webkit-transform: scale(1.5, 1.2); /* Safari and Chrome */
-            -moz-transform: scale(1.5, 1.2); /* Firefox */
-            -ms-transform: scale(1.5, 1.2); /* IE 9 */
-            -o-transform: scale(1.5, 1.2); /* Opera */
-            transform: scale(1.5, 1.2); /* W3C */
+            top: 12%;
         }
 
+        /* choose your vibe */
         .choose {
             text-align: center;
             position: relative;
-            top: 20%;
+            top: 12%;
             margin: auto;
-            font-size: 2.8em;
+            font-size: 2.8vw;
         }
 
         .vibe {
             position: relative;
-            top: 32%;
+            top: 22%;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        form {
+            margin: auto;
+            width: 70%;
             display: flex;
-            justify-content: space-evenly;
         }
 
-        img {
-            width: 250px;
-            height: 250px;
-            opacity: .2;
-            filter: drop-shadow(9px 5px 0.75rem rgb(102, 102, 102));
-            /* filter: invert(100%); */
+        /* button */
+        .btn {
+            flex: 1 1 auto;
+            margin: 2.4vw;
+            height: 10vw;
+            width: 5vw;
+            text-align: center;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            font-size: 1.15vw;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.822);
+            border-radius: 12%;
+            border-color: transparent;
+            filter: drop-shadow(1px 1px .28rem rgb(161, 161, 161));
 
+        }
+
+        .btn:hover {
+            background-position: right center;
+            cursor: pointer;
+        }
+
+        .peachy_keen {
+            background-image: linear-gradient(to right,#f7a08a 0%,#FEE8A6 51%,#f7a08a 100%);
+
+        }
+
+        .bright_sky {
+        background-image: linear-gradient(to right,#a1c4fd 0%,#c2e9fb 51%,#a1c4fd 100%);
+
+        }
+
+        .spring_green {
+        background-image: linear-gradient(to right, #99DDD2 0%, #beedbf 51%, #99DDD2 100%);
+        }
+
+        .purple_rain {
+        background-image: linear-gradient(to right, #e6706c 0%, #9198e5 51%, #e6706c 100%);
         }
 
         footer {
@@ -90,15 +116,15 @@
     <div class='vibe'>
 
         <form action="vibehome" method="post">
-            <input type="submit"  name="vibe_choice" value="peachy" alt="button"/>
-            <input type="submit"  name="vibe_choice" value="bright_sky" alt="button"/>
-            <input type="submit"  name="vibe_choice" value="spring_green" alt="button"/>
-            <input type="submit"  name="vibe_choice" value="purple_rain" alt="button"/>
+            <input id='button' class='btn peachy_keen' type="submit" name="vibe_choice" value="peachy keen" alt="button" />
+            <input id='button' class='btn bright_sky' type="submit" name="vibe_choice" value="bright sky" alt="button" />
+            <input id='button' class='btn spring_green' type="submit" name="vibe_choice" value="spring green" alt="button" />
+            <input id='button' class='btn purple_rain' type="submit" name="vibe_choice" value="purple rain" alt="button" />
             <!--<input type="submit" id="vibe_choice" name="vibe_choice" value="peachy" alt="button"/>-->
 
-        <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
-        <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
-        <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
+            <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
+            <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
+            <!--<img id='button' src="../api-project/images/default-button.svg" alt="button">-->
         </form>
     </div>
     <footer>

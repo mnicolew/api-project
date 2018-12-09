@@ -80,9 +80,9 @@
     }
     
     nav a {
-        padding: 20px 10px 10px 32px;
+        padding: 20px 10px 10px 42px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 1.62vw;
         color: black;
         display: block;
         transition: 0.28s;
@@ -98,7 +98,7 @@
         position: absolute;
         top: 20px;
         right: 25px;
-        font-size: 45px;
+        font-size: 50px;
         margin-left: 0px;
         cursor: pointer;
         
@@ -214,8 +214,10 @@
         // Open the side nav bar on click.
         // Max width of 250px
         function openNav() {
-            document.getElementById("nav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            // document.getElementById("nav").style.width = "250px";
+            // document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("nav").style.width = "14%";
+            document.getElementById("main").style.marginLeft = "14%";
         }
 
         // Close the side nav bar on click
@@ -291,7 +293,7 @@
 
     <!-- CLOCK CSS modified from https://codepen.io/eehayman/pen/jVPKpN-->
     <style>
-        .clock-day:before {
+    .clock-day:before {
         content: var(--timer-day);
     }
 

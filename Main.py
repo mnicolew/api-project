@@ -120,13 +120,13 @@ class VibeResponseHandler(webapp2.RequestHandler):
         maindict['yogadata'] = getYoga()
         maindict['quotedata'] = quoteREST()
 
-        if vibe_choice == 'peachy':
+        if vibe_choice == 'peachy keen':
             template = JINJA_ENVIRONMENT.get_template('home-template1.html')
             self.response.write(template.render(maindict))
-        elif vibe_choice == 'bright_sky':
+        elif vibe_choice == 'bright sky':
             template = JINJA_ENVIRONMENT.get_template('home-template2.html')
             self.response.write(template.render(maindict))
-        elif vibe_choice == 'spring_green':
+        elif vibe_choice == 'spring green':
             template = JINJA_ENVIRONMENT.get_template('home-template3.html')
             self.response.write(template.render(maindict))
         else:

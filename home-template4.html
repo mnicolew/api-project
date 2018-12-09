@@ -3,12 +3,9 @@
 <!-- purple rain -->
 <head>
     <title>Cool Name</title>
-    <link type='image' href="../api-project/images/pause.png" />
-    <link type='image' href="../api-project/images/play.png" />
-    <link type='image' href="../api-project/images/default-button.svg" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-
     <!-- Import javascript files -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,8 +18,7 @@
         html {
         background-size: cover;
         background-repeat: no-repeat;
-        /* background-size: 1000% 1000% !important; */
-        /* overflow: scroll; */
+
         width: 100%;
     }
     
@@ -30,14 +26,9 @@
         
         height: 100%;
         background: linear-gradient(#e6706c, #9198e5);
-        /* background: linear-gradient(rgb(243, 192, 38), rgba(146, 233, 255, 0.884)); */
-
-        /* background: linear-gradient(#FEE8A6, #F7A08A); */
-
         margin: auto;
         width: 100%;
         justify-content: center;
-        /* font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif; */
         font-family: 'Montserrat', 'sans-serif';
 
     }
@@ -57,7 +48,7 @@
 
     h2 {
         text-align: center;
-        font-size: 3em;
+        font-size: 3vw;
         margin-bottom: 6vh;
     }
 
@@ -80,9 +71,9 @@
     }
     
     nav a {
-        padding: 20px 10px 10px 32px;
+        padding: 20px 10px 10px 42px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 1.62vw;
         color: black;
         display: block;
         transition: 0.28s;
@@ -98,7 +89,7 @@
         position: absolute;
         top: 20px;
         right: 25px;
-        font-size: 45px;
+        font-size: 50px;
         margin-left: 0px;
         cursor: pointer;
         
@@ -137,8 +128,8 @@
         width: 78%;
         margin: auto;
     }
+
     .section{
-        /* padding: 30% 0; */
         padding-top: 14vh;
         padding-bottom: 16vw;
         width: 78%;
@@ -151,16 +142,14 @@
         justify-content: space-evenly;
         width: 100%;
     }
+
     /* quote container */
     .container {
         margin: auto;
-        /* background-color: gainsboro; */
         border-color: white;
         border-style: solid;
         border-width: 3.5px;
         border-radius: 25px;
-
-        height: 22vw;
         width: 90%;
 
     }
@@ -171,7 +160,6 @@
         margin: auto;
         font-size: 2.5vw;
         vertical-align: middle;
-
     }
 
     #quote p {
@@ -180,9 +168,6 @@
     }
 
     .poses {
-        /*change to percentage or vw */
-        /* height: 350px;
-        width: 350px; */
         height: 20vw;
         width: 20vw;
         border-style: solid;
@@ -214,10 +199,10 @@
     <!-- JAVA SCRIPT -->
     <script>
         // Open the side nav bar on click.
-        // Max width of 250px
+        // Max width of 14%
         function openNav() {
-            document.getElementById("nav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("nav").style.width = "14%";
+            document.getElementById("main").style.marginLeft = "14%";
         }
 
         // Close the side nav bar on click
@@ -293,7 +278,7 @@
 
     <!-- CLOCK CSS modified from https://codepen.io/eehayman/pen/jVPKpN-->
     <style>
-        .clock-day:before {
+    .clock-day:before {
         content: var(--timer-day);
     }
 
@@ -438,7 +423,7 @@
             <a href="#horoscope">Horoscope</a>
             <a href="#contact">Contact</a>
 
-            <!-- embedded youtube video/audio that i didnt know where to put -->
+            <!-- embedded youtube video/audio -->
             <a>
                 <div data-video="hHW1oY26kxQ" data-autoplay="0" data-loop="0" id="youtube-audio"></div>
             </a>
@@ -500,7 +485,6 @@
                 {% for p,data in yogadata.items() %}
                 <div>
 
-                    <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
                     <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="28" />
                     <h3>Sanskrit: {{data.s_name}}</h3>
                     <h3>English: {{data.e_name}}</h3>
@@ -515,7 +499,7 @@
             <h2>Horoscope</h2>
             <!-- form to select month/date of birth validated by .js file -->
             <!-- "/result" is the page that is created from the user input -->
-            <form id='DOB' name=DOB method="post" action="/result" onsubmit="return validateForm(this);">
+            <form id='DOB' name=DOB method="get" action="/result" onsubmit="return validateForm(this);">
                 <label for="sunsign">When is your birthday? </label>
                 <select name="month" id="month" required>
                     <option value="1">January</option>
@@ -552,22 +536,3 @@
 </body>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for p,data in yogadata.items() %}
-        <p>{{data.e_name}}</p>
-        <p>{{data.s_name}}</p>
-        <img src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/>
-    {% endfor%}
-
-    {% for v in quotedata %}
-        <p>{{v}}</p>
-    {% endfor%}
-</body>
-</html> -->

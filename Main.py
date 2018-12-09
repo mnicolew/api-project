@@ -22,7 +22,7 @@ def safeGet(url):
 
 def getYoga():
     #choose a random yoga pose and store it's names and image
-    choose = random.sample(range(0, 34), 3)
+    choose = random.sample(range(0, 36), 3)
     yoga = json.load(open('yogaJSON.txt', 'r'))
     posedata = {}
     for p in choose:
@@ -54,29 +54,29 @@ def quoteREST():
 def getZodiac(birthday):
     zodiac = ""
     if (birthday >= 321 and  birthday <= 419):
-        zodiac='aries'
+        zodiac='Aries'
     elif (birthday >= 420 and birthday <= 520):
-        zodiac='taurus'
+        zodiac='Taurus'
     elif (birthday >= 521 and birthday <= 620):
-        zodiac='gemini'
+        zodiac='Gemini'
     elif (birthday >= 621 and birthday <= 722):
-        zodiac='cancer'
+        zodiac='Cancer'
     elif (birthday >= 723 and birthday <= 822):
-        zodiac='leo'
+        zodiac='Leo'
     elif (birthday >= 823 and birthday <= 922):
-        zodiac='virgo'
+        zodiac='Virgo'
     elif (birthday >= 923 and birthday <= 1022):
-        zodiac='libra'
+        zodiac='Libra'
     elif (birthday >= 1023 and birthday <= 1121):
-        zodiac='scorpio'
+        zodiac= 'Scorpio'
     elif (birthday >= 1122 and birthday <= 1221):
-        zodiac='sagittarius'
+        zodiac='Sagittarius'
     elif (birthday >= 1222 and birthday <= 119):
-        zodiac='capricorn'
+        zodiac='Capricorn'
     elif (birthday >= 120 and birthday <= 218):
-        zodiac='aquarius'
+        zodiac='Aquarius'
     else:
-        zodiac = 'pisces'
+        zodiac = 'Pisces'
     return zodiac
 
 # TESTING ==>
@@ -120,13 +120,13 @@ class VibeResponseHandler(webapp2.RequestHandler):
         maindict['yogadata'] = getYoga()
         maindict['quotedata'] = quoteREST()
 
-        if vibe_choice == 'peachy':
+        if vibe_choice == 'peachy keen':
             template = JINJA_ENVIRONMENT.get_template('home-template1.html')
             self.response.write(template.render(maindict))
-        elif vibe_choice == 'bright_sky':
+        elif vibe_choice == 'bright sky':
             template = JINJA_ENVIRONMENT.get_template('home-template2.html')
             self.response.write(template.render(maindict))
-        elif vibe_choice == 'spring_green':
+        elif vibe_choice == 'spring green':
             template = JINJA_ENVIRONMENT.get_template('home-template3.html')
             self.response.write(template.render(maindict))
         else:

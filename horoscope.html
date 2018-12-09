@@ -2,45 +2,93 @@
 <html>
 
 <head>
-    <title>horoscope</title>
+    <title>Today's horoscope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <style>
-        /* ---- reset ---- */
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 
+    <style>
         body {
             margin: 0;
             background-color: transparent;
             /* background-color: #17182f; */
+            font-family: 'Montserrat', 'sans-serif';
+            width: 100%;
+            height: 100%;
         }
 
         canvas {
             display: block;
-            /* vertical-align: bottom; */
         }
 
-        h1{
-            font-size: 5em;
+        h1 {
+            margin: auto;
+            padding-bottom: 5%;
             text-align: center;
-            position: fixed;
-            z-index: 2;
-        }
-        
-        p {
-            font-size: 3em;
-            color: wheat;
-            z-index: 6;
+            color: white;
+            font-size: 4vw;
+            opacity: .9;
         }
 
-        img {
+        .horoscope {
+            position: absolute;
+            top: 9%;
+            transform: translateX(33.333%);
+            height: 80%;
+            width: 60%;
+            z-index: 5;
 
         }
+
+        .horoscope img {
+            position: relative;
+            width: 13vw;
+            height: 13vw;
+            display: block;
+            margin: auto;
+            padding-top: 2%;
+            opacity: .85;
+
+        }
+
+        .text {
+            position: relative;
+            color: white;
+            opacity: .9;
+            font-size: 1.12vw;
+            line-height: 3vw;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .home {
+            margin: auto;
+            width: 2vw;
+            height: 2vw;
+            filter: invert(100%);
+            opacity: .85;
+            padding: 2%;
+        }
+
+        footer {
+        font-size: .65vw;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        width: 100%;
+        opacity: .5;
+        background-color: none;
+        color: white;
+        text-align: center;
+        z-index: 5;
+    }
+
         /* ---- particles.js container ---- */
         /* modified to a 180 gradient from dark purple to magenta with a longer animation*/
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg,black 0%, #1A0E3B 40%, #863B43 80%, #aa5c63 100%);
+            background: linear-gradient(180deg, black 0%, #1A0E3B 40%, #863B43 80%, #aa5c63 100%);
             background-size: 1000% 1000% !important;
             -webkit-animation: changeColors 120s ease infinite;
             -moz-animation: changeColors 120s ease infinite;
@@ -71,11 +119,14 @@
 <body>
     <div id="particles-js"></div>
     <div class='horoscope'>
+        <h1>Daily Horoscope: {{sign}}</h1>
         <img src="../assets/images/{{sign}}.svg">
+        <div class='text'>
+            <p>{{horoscope}}</p>
+        </div>
     </div>
-    
-    <p>{{sign}}</p>
-    <p>{{horoscope}}</p>
+
+    <input class='home' type="image" src='../assets/images/home.svg' value="Home Page" onclick="history.back(-1)" />
 
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -194,23 +245,12 @@
             "retina_detect": true
         });
     </script>
-    <!-- <h1>HOROSCOPE &#9804;</h1> -->
+    <footer>
+        <p>
+            &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
+            <br /> UW Seattle - HCDE 310 API Project Autumn 2018
+        </p>
+    </footer>
 </body>
 
 </html>
-
-
-<!-- 
-    Aries (March 21- April 19)
-    Taurus (April 20 - May 20)
-    Gemini (May 21 - June 20)
-    Cancer (June 21 - July 22)
-    Leo (July 23 - August 22)
-    Virgo (August 23 - September 22)
-    Libra (September 23 - October 22)
-    Scorpio (October 23 - November 21)
-    Sagittarius (November 22 - December 21)
-    Capricorn (December 22 - January 19)
-    Aquarius (January 20 - February 18)
-    Pisces (February 19 - March 20)
- -->

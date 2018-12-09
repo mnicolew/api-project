@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 
     <style>
-        /* ---- reset ---- */
-
         body {
             margin: 0;
             background-color: transparent;
@@ -32,17 +30,11 @@
         }
 
         .horoscope {
-            /* padding-top: 5%; */
-            /* position: absolute; */
-            /* top: 5%;
-            left: 20%; */
             position: absolute;
             top: 9%;
             transform: translateX(33.333%);
-            /* transform: translateY(-50%); */
             height: 80%;
             width: 60%;
-            font-family: 'Montserrat', 'sans-serif';
             z-index: 5;
 
         }
@@ -62,7 +54,7 @@
             position: relative;
             color: white;
             opacity: .9;
-            font-size: 1.1vw;
+            font-size: 1.12vw;
             line-height: 3vw;
             margin: auto;
             padding-top: 50px;
@@ -78,12 +70,12 @@
         }
 
         footer {
-        font-size: .6vw;
+        font-size: .65vw;
         position: absolute;
         left: 0;
         bottom: 15px;
         width: 100%;
-        opacity: .55;
+        opacity: .5;
         background-color: none;
         color: white;
         text-align: center;
@@ -104,6 +96,21 @@
             animation: changeColors 120s ease infinite;
             display: block;
             z-index: -2;
+
+        }
+
+        @-webkit-keyframes changeColors {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
         }
     </style>
 
@@ -238,7 +245,6 @@
             "retina_detect": true
         });
     </script>
-    <!-- <h1>HOROSCOPE &#9804;</h1> -->
     <footer>
         <p>
             &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
@@ -248,19 +254,3 @@
 </body>
 
 </html>
-
-
-<!-- 
-    Aries (March 21- April 19)
-    Taurus (April 20 - May 20)
-    Gemini (May 21 - June 20)
-    Cancer (June 21 - July 22)
-    Leo (July 23 - August 22)
-    Virgo (August 23 - September 22)
-    Libra (September 23 - October 22)
-    Scorpio (October 23 - November 21)
-    Sagittarius (November 22 - December 21)
-    Capricorn (December 22 - January 19)
-    Aquarius (January 20 - February 18)
-    Pisces (February 19 - March 20)
- -->

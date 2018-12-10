@@ -510,6 +510,7 @@
             <a href="#scroll2">Quote</a>
             <a href="#scroll3">Yoga</a>
             <a href="#scroll4">Horoscope</a>
+            <a href="#scroll5">Breathe</a>
             <img id='logo' src="../assets/images/meditation-black.svg">
 
             <!-- <a href="#about">About</a> -->
@@ -625,8 +626,160 @@
                     <input id='submitForm' type="submit" value="Submit" />
                 </form>
             </div>
+        </div>
+
+        <!-- Manipulated code from https://css-tricks.com/recreating-apple-watch-breathe-app-animation/ -->
+        <style>
+            .breathingExercise {
+                /* height: 155px;
+                    width: 155px; */
+                height: 11vw;
+                width: 11vw;
+                animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+                margin: auto;
+            }
+
+            .circle {
+                /* height: 155px;
+                    width: 155px; */
+                height: 11vw;
+                width: 11vw;
+                border-radius: 50%;
+                position: absolute;
+                mix-blend-mode: screen;
+                transform: translate(0, 0);
+                animation: center 6s infinite;
+            }
+
+            .circle:nth-child(odd) {
+                /* background: #61bea2; */
+                background: linear-gradient(#e6706c, #9198e5);
+                filter: drop-shadow(1px 1px .28rem rgba(49, 49, 49, 0.322));
 
 
+
+            }
+
+            .circle:nth-child(even) {
+                /* background: #529ca0; */
+                background: linear-gradient(#9198e5, #e6706c);
+                filter: drop-shadow(1px 1px .28rem rgba(49, 49, 49, 0.322));
+
+
+            }
+
+            .circle:nth-child(1) {
+                animation: circle-1 4s ease alternate infinite;
+            }
+
+            .circle:nth-child(2) {
+                animation: circle-2 4s ease alternate infinite;
+            }
+
+            .circle:nth-child(3) {
+                animation: circle-3 4s ease alternate infinite;
+            }
+
+            .circle:nth-child(4) {
+                animation: circle-4 4s ease alternate infinite;
+            }
+
+            .circle:nth-child(5) {
+                animation: circle-5 4s ease alternate infinite;
+            }
+
+            .circle:nth-child(6) {
+                animation: circle-6 4s ease alternate infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(.15) rotate(180deg);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes circle-1 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(-35px, -50px);
+                }
+            }
+
+            @keyframes circle-2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(35px, 50px);
+                }
+            }
+
+            @keyframes circle-3 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(-60px, 0);
+                }
+            }
+
+            @keyframes circle-4 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(60px, 0);
+                }
+            }
+
+            @keyframes circle-5 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(-35px, 50px);
+                }
+            }
+
+            @keyframes circle-6 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(35px, -50px);
+                }
+            }
+        </style>
+        <div class="scroll" id="scroll5">
+            <!-- padding-top: 14vh;
+                    padding-bottom: 16vw;
+                    width: 78%;
+                    margin: auto; -->
+            <div id='breathe' style="padding-bottom: 6vw; padding-top: 14vh;">
+                <h2 style="margin-bottom: 9%;">Breathe</h2>
+                <div class="breathingExercise">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <p style="text-align: center; font-size: 1.2vw; margin-top: 6.5%;">Exhale when it shrinks, inhale when
+                    it grows.</p>
+            </div>
             <footer>
                 <p>
                     &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
@@ -634,6 +787,7 @@
                 </p>
             </footer>
         </div>
+
 </body>
 
 </html>

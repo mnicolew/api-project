@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <!-- peachy -->
+
 <head>
-    <title>Cool Name</title>
+    <title>Essence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <!-- Icon from "https://www.flaticon.com/authors/eucalyp" -->
+    <link rel='shortcut icon' type="image/x-icon" href='../assets/images/meditations.png'>
 
     <!-- Import javascript files -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+
+    <!-- Scrollify -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
@@ -24,7 +32,7 @@
     body {
         
         height: 100%;
-        background: linear-gradient(#f7a08a,#FEE8A6);
+        background: linear-gradient(#f3937b,rgb(247, 226, 158));
         margin: auto;
         width: 100%;
         justify-content: center;
@@ -97,7 +105,8 @@
     .openbtn {
         font-size: 60px;
         cursor: pointer;
-        opacity: .85;
+        opacity: .95;
+        filter: drop-shadow(1px 1px .28rem rgba(0, 0, 0, 0.212));
     }
 
     .youtube {
@@ -115,7 +124,7 @@
         line-height: 0;
         color: rgb(253, 228, 227);
         opacity: .90;
-        padding-top: 12vh ;
+        padding-top: 14vh ;
         padding-bottom: 2vh;
         width: 78%;
         margin: auto;
@@ -156,7 +165,7 @@
         height: 80%;
         width: 90%;
         margin: auto;
-        font-size: 2.5vw;
+        font-size: 2.2vw;
         vertical-align: middle;
     }
 
@@ -166,13 +175,51 @@
     }
 
     .poses {
-        height: 20vw;
-        width: 20vw;
+        height: 18vw;
+        width: 18vw;
         border-style: solid;
         border-width: 3.5px;
         border-radius: 35px;
         border-color: white;
-        filter: drop-shadow(9px 5px 0.75rem rgb(90, 84, 92));
+        filter: drop-shadow(9px 5px 0.75rem rgba(0, 0, 0, 0.582));
+    }
+
+    form {
+        width: 80%;
+        margin: auto;
+        transform: translateY(35%);
+        text-align: center;
+        font-size: 1.5vw;
+        height: 22vh;
+        border-width: 3.5px;
+        border-radius: 35px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    label {
+        margin-right: 1.5%;
+    }
+
+    select, input {
+        font-family: 'Montserrat', 'sans-serif';
+        font-size: 1vw;
+        margin-top: 9vh;
+        margin-left:5px;
+        height: 2vw;
+        border-radius: 5px;
+        border-color: transparent;
+        filter: drop-shadow(1px 1px .28rem rgba(0, 0, 0, 0.212));
+
+    }
+
+    input:hover {
+        background-color: #f8a48fda;
+        cursor: pointer;
+    }
+
+    select:hover {
+        cursor: pointer;
     }
 
     footer {
@@ -294,10 +341,6 @@
         content: var(--timer-seconds);
     }
 
-    /* .time {
-        top: 10%;
-    }  */
-
     .clock-container {
         margin: auto;
         width: 40vw;
@@ -402,6 +445,38 @@
         }
 
     </script>
+
+    <!-- SCROLLIFY JQUERY -->
+    <script>
+        $(function () {
+            $.scrollify({
+                section: ".scroll",
+                sectionName: false,
+                interstitialSection: "",
+                easing: "easeOutExpo",
+                scrollSpeed: 1000,
+                offset: 0,
+                scrollbars: true,
+                standardScrollElements: "",
+                setHeights: true,
+                overflowScroll: false,
+                updateHash: true,
+                touchScroll: true,
+                before: function () { },
+                after: function () { },
+                afterResize: function () { },
+                afterRender: function () { }
+            });
+        });
+    </script>
+    <!-- SCROLLIFY CSS -->
+    <style>
+        .scroll {
+            padding: 0;
+            margin:0;
+            height: 0px;
+        }
+    </style>
 </head>
 
 <body>
@@ -417,11 +492,11 @@
         <nav id="nav">
             <!-- Click nav bar link to jump to the section on the html -->
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9932;</a>
-            <a href="#hello">Hello</a>
-            <a href="#hrefQuote">Quote</a>
-            <a href="#yoga">Yoga</a>
-            <a href="#horoscope">Horoscope</a>
-            <a href="#contact">Contact</a>
+            <a href="#scroll1">Hello</a>
+            <a href="#scroll2">Quote</a>
+            <a href="#scroll3">Yoga</a>
+            <a href="#scroll4">Horoscope</a>
+            <!-- <a href="#about">About</a> -->
 
             <!-- embedded youtube video/audio -->
             <a>
@@ -431,108 +506,117 @@
     </header>
 
     <div id='main'>
-
-        <div id="hello" class='animated fadeIn slow'>
-            <h1>Hello</h1>
-        </div>
-        <!-- clock -->
-        <div class='animated slideInUp slow delay-1s'>
-            <div id='time'>
-                <div class="clock-container">
-                    <div class="clock-col">
-                        <p class="clock-day clock-timer">
-                        </p>
-                        <p class="clock-label">
-                            Day
-                        </p>
-                    </div>
-                    <div class="clock-col">
-                        <p class="clock-hours clock-timer">
-                        </p>
-                        <p class="clock-label">
-                            Hours
-                        </p>
-                    </div>
-                    <div class="clock-col">
-                        <p class="clock-minutes clock-timer">
-                        </p>
-                        <p class="clock-label">
-                            Minutes
-                        </p>
+        <div class='scroll' id='scroll1'>
+            <div id="hello" class='animated fadeIn slow'>
+                <h1>Hello</h1>
+            </div>
+            <!-- clock -->
+            <div class='animated slideInUp slow delay-1s'>
+                <div id='time'>
+                    <div class="clock-container">
+                        <div class="clock-col">
+                            <p class="clock-day clock-timer">
+                            </p>
+                            <p class="clock-label">
+                                Day
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <p class="clock-hours clock-timer">
+                            </p>
+                            <p class="clock-label">
+                                Hours
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <p class="clock-minutes clock-timer">
+                            </p>
+                            <p class="clock-label">
+                                Minutes
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="hrefQuote" class="section">
-            <h2>Inspirational Quote of The Day</h2>
-            <div class='container'>
-                <div id="quote">
+        <div class='scroll' id='scroll2'>
 
-                    <p>{% for v in quotedata %}
-                        {{v}}<br><br>
-                        {% endfor%}
-                    </p>
+            <div id="hrefQuote" class="section">
+                <h2>Inspirational Quote of The Day</h2>
+                <div class='container'>
+                    <div id="quote">
 
+                        <p>{% for v in quotedata %}
+                            {{v}}<br><br>
+                            {% endfor%}
+                        </p>
+
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="yoga" class='section'>
-            <!-- yoga pose images/names -->
-            <h2>Yoga Poses of The Day</h2>
-            <div class="flexbox">
-                {% for p,data in yogadata.items() %}
-                <div>
+        <div class='scroll' id='scroll3'>
 
-                    <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
-                    <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="28" />
-                    <h3>Sanskrit: {{data.s_name}}</h3>
-                    <h3>English: {{data.e_name}}</h3>
+            <div id="yoga" class='section'>
+                <!-- yoga pose images/names -->
+                <h2>Yoga Poses of The Day</h2>
+                <div class="flexbox">
+                    {% for p,data in yogadata.items() %}
+                    <div>
+
+                        <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
+                        <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="28" />
+                        <p style="font-size: 1.2vw; text-align: center;">Sanskrit: {{data.s_name}}</p>
+                        <p style="font-size: 1.2vw; text-align: center;">English: {{data.e_name}}</p>
 
 
+                    </div>
+                    {% endfor%}
                 </div>
-                {% endfor%}
             </div>
         </div>
 
-        <div id="horoscope" class="section">
-            <h2>Horoscope</h2>
-            <!-- form to select month/date of birth validated by .js file -->
-            <!-- "/result" is the page that is created from the user input -->
-            <form id='DOB' name=DOB method="get" action="/result" onsubmit="return validateForm(this);">
-                <label for="sunsign">When is your birthday? </label>
-                <select name="month" id="month" required>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                <!-- 31 day selector function defined in .js file -->
-                <select name="day" id="day" required>
-                    <script type='text/javascript'>
-                        selectDay();
-                    </script>
-                </select>
-                <input id='submitForm' type="submit" value="Submit" />
-            </form>
-            <p></p>
-        </div>
+        <div class='scroll' id='scroll4'>
 
-        <footer>
-            <p>
-                &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
-                <br /> UW Seattle - HCDE 310 API Project Autumn 2018
-            </p>
-        </footer>
+            <div id="horoscope" class="section">
+                <h2>Horoscope</h2>
+                <!-- form to select month/date of birth validated by .js file -->
+                <!-- "/result" is the page that is created from the user input -->
+                <form id='DOB' name=DOB method="get" action="/result" onsubmit="return validateForm(this);">
+                    <label for="sunsign">When is your birthday? </label>
+                    <select name="month" id="month" required>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <!-- 31 day selector function defined in .js file -->
+                    <select name="day" id="day" required>
+                        <script type='text/javascript'>
+                            selectDay();
+                        </script>
+                    </select>
+                    <input id='submitForm' type="submit" value="Submit" />
+                </form>
+            </div>
+
+            <footer>
+                <p>
+                    &copy Copyright 2018 - Created by Khadijah Jordan and M. Nicole Washington
+                    <br /> UW Seattle - HCDE 310 API Project Autumn 2018
+                </p>
+            </footer>
+        </div>
     </div>
 </body>
 

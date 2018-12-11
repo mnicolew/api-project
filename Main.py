@@ -43,9 +43,6 @@ def quoteREST():
     url = 'http://quotes.rest/qod.json?category=inspire&api_key=d9jh_OCJD0Z0zWNnOVhIpAeF'
     quotedata = safeGet(url).read()
     quotejson = json.loads(quotedata)
-    # quote = {}
-    # quote['quote'] = quotejson['contents']['quotes'][0]['quote']
-    # quote['author'] = quotejson['contents']['quotes'][0].get('author','anonymous')
     quote =[]
     quote.append('"' + quotejson['contents']['quotes'][0]['quote'] + '"')
     quote.append('-' + quotejson['contents']['quotes'][0].get('author','anonymous'))
@@ -148,18 +145,6 @@ class horoResponseHandler(webapp2.RequestHandler):
 
         template = JINJA_ENVIRONMENT.get_template('horoscope.html')
         self.response.write(template.render(maindict))
-
-        # sunsign = getZodiac(DOB)
-
-
-    # signs = {'aries': '../api-project/images/aries.svg','taurus':'/..api-project/images/taurus.svg','gemini':'/..api-project/images/gemini.svg','cancer':'/..api-project/images/cancer.svg',
-            #  'leo':'/..api-project/images/leo.svg','virgo':'/..api-project/images/virgo.svg','libra':'/..api-project/images/libra.svg','scorpio':'/..api-project/images/scorpio.svg',
-            #  'sagittarius':'/..api-project/images/sagittarius.svg','capricorn':'/..api-project/images/capricorn.svg','aquarius':'/..api-project/images/aquarius.svg','pisces': '/..api-project/images/pisces.svg'}
-    # print(signs)
-
-    # Determines the zodiac sign based on the user input 
-    # from the horoscope birthday request
-
 
 application = webapp2.WSGIApplication([\
                                       ('/vibehome', VibeResponseHandler),

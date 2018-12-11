@@ -41,6 +41,14 @@
 
     }
 
+    #arrow {
+        display: block;
+        margin:auto;
+        transform: translateY(-550%);
+        filter: invert(100%);
+        opacity: .9;
+    }
+
     #main {
         transition: margin-left .5s;
     }
@@ -97,14 +105,14 @@
         position: absolute;
         top: 20px;
         right: 25px;
-        font-size: 50px;
+        font-size: 2.6vw;
         margin-left: 0px;
         cursor: pointer;
         
     }
     
     .openbtn {
-        font-size: 60px;
+        font-size: 3.2vw;
         cursor: pointer;
         opacity: .95;
         filter: drop-shadow(1px 1px .28rem rgba(0, 0, 0, 0.212));
@@ -117,12 +125,12 @@
         float: right;
     }
 
- #logo {
+     #logo {
         position: absolute;
         height:3vw;
         width:3vw;
         margin-left: 38%;
-        margin-top: 190%;
+        margin-top: 160%;
         opacity: .7;
     }
 
@@ -234,7 +242,7 @@
     }
 
     footer {
-        font-size: 1em;
+        font-size: .8vw;;
         position: static;
         left: 0;
         bottom: 15px;
@@ -555,6 +563,9 @@
                     </div>
                 </div>
             </div>
+            <div class='animated fadeIn slower delay-3s'>
+                <img id='arrow' src="../assets/images/down-arrow.svg">
+            </div>
         </div>
 
         <div class='scroll' id='scroll2'>
@@ -572,6 +583,7 @@
                     </div>
                 </div>
             </div>
+            <img id='arrow' src="../assets/images/down-arrow.svg">
         </div>
 
         <div class='scroll' id='scroll3'>
@@ -583,7 +595,6 @@
                     {% for p,data in yogadata.items() %}
                     <div>
 
-                        <!-- <img class= "poses" src="{{data.image}}" alt="{{data.e_name}}" width="500" border="2" hspace="20"/> -->
                         <img class="poses" src="{{data.image}}" alt="{{data.e_name}}" hspace="28" />
                         <p style="font-size: 1.2vw; text-align: center;">Sanskrit: {{data.s_name}}</p>
                         <p style="font-size: 1.2vw; text-align: center;">English: {{data.e_name}}</p>
@@ -591,8 +602,10 @@
 
                     </div>
                     {% endfor%}
+
                 </div>
             </div>
+            <img style='display: block; margin:auto;transform: translateY(-725%); filter: invert(100%);opacity: .9;' src="../assets/images/down-arrow.svg">
         </div>
 
         <div class='scroll' id='scroll4'>
@@ -626,8 +639,8 @@
                     <input id='submitForm' type="submit" value="Submit" />
                 </form>
             </div>
+            <img style="display: block; margin:auto; filter: invert(100%); opacity: 1; " src="../assets/images/down-arrow.svg">
         </div>
-
         <!-- Manipulated code from https://css-tricks.com/recreating-apple-watch-breathe-app-animation/ -->
         <style>
             .breathingExercise {
@@ -768,7 +781,7 @@
                     width: 78%;
                     margin: auto; -->
             <div id='breathe' style="padding-bottom: 6vw; padding-top: 14vh;">
-                <h2 style="margin-bottom: 9%;">Breathe</h2>
+                <h2 style="margin-bottom: 8.5%;">Breathe</h2>
                 <div class="breathingExercise">
                     <div class="circle"></div>
                     <div class="circle"></div>
@@ -777,7 +790,7 @@
                     <div class="circle"></div>
                     <div class="circle"></div>
                 </div>
-                <p style="text-align: center; font-size: 1.2vw; margin-top: 6.5%;">Exhale when it shrinks, inhale when
+                <p style="text-align: center; font-size: 1.2vw; margin-top: 5.5%;">Exhale when it shrinks, inhale when
                     it grows.</p>
             </div>
             <footer>
